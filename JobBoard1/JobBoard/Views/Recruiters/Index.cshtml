@@ -1,0 +1,46 @@
+﻿@model IEnumerable<JobBoard.Models.Recruiter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Recruiter Portal</h2>
+
+<p>
+    @Html.ActionLink("Add New Recruiter", "Create")
+</p><div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        <tr class="danger">
+            <th>
+                @Html.DisplayNameFor(model => model.RecruiterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecruiterAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecruiterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecruiterAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ReId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ReId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ReId })
+                </td>
+            </tr>
+        }
+
+    </table></div>

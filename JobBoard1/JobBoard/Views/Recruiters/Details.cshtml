@@ -1,0 +1,42 @@
+﻿@model JobBoard.Models.Recruiter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recruiter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecruiterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecruiterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecruiterAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecruiterAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
